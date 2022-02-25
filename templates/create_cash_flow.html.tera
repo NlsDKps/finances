@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CashFlow - Details</title>
+    </head>
+    <body>
+        <header>CashFlow - Details</header>
+        <main>
+            <form>
+                <div>
+                    <label for="cash_flow_name">Name</label>
+                    <input type="text" id="cash_flow_name" name="name" placeholder="Name des neuen Ein-/Ausgangs" required/>
+                </div>
+                <div>
+                    <label for="cash_flow_value">Value</label>
+                    <input type="number" step="0.01" id="cash_flow_value" name="value" placeholder="Wert des neuen Ein-/Ausgangs" required/>
+                </div>
+                <div>
+                    <label for="cash_flow_frequency">Frequency</label>
+                    <input type="text" id="cash_flow_frequency" name="frequency" placeholder="Wie oft (pro Jahr) geschieht dieser Ein-/Ausgang?" required/>
+                </div>
+                <button type="submit">Bestätigen</button><button>Abbrechen</button>
+            </form>
+        </main>
+    </body>
+</html>

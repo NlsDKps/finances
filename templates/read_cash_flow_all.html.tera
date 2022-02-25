@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Finances - All</title>
+    </head>
+    <body>
+        <header>Finances - All</header>
+        <main>
+            <table>
+                <thead>
+                    <tr><th>Name</th><th>Value</th></tr>
+                </thead>
+                <tbody>
+                    {% for entity in cash_flows %}
+                    <tr>
+                        <td>{{entity.name}}</td>
+                        <td>{{entity.value}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </main>
+    </body>
+</html>

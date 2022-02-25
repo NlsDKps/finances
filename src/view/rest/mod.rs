@@ -1,5 +1,5 @@
 use rocket::serde::{json::Json};
-use crate::view::structures::{CashFlow, CashFlowDetail};
+use crate::view::structures::{CashFlow, cash_flow_detail::CashFlowDetail};
 
 pub fn create_cash_flow() -> Json<CashFlowDetail> {
     Json(CashFlowDetail::empty())
