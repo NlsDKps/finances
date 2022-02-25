@@ -7,3 +7,12 @@ pub struct CashFlow {
     pub name: String,
     pub value: f32
 }
+
+impl CashFlow {
+    fn example() -> Self {
+        CashFlow {
+            name: String::from("Example Flow"),
+            value: 123.4 as f32
+        }
+    }
+}

@@ -1,3 +1,3 @@
 pub mod html;
-pub mod rest;
+pub mod api;
 pub mod structures;

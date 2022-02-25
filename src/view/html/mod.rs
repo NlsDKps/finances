@@ -2,7 +2,7 @@ use rocket::response::Redirect;
 use rocket::serde::{Deserialize, Serialize, json::Json};
 use rocket_dyn_templates::Template;
 
-use crate::view::structures::{CashFlow, CashFlowDetail};
+use crate::view::structures::{CashFlow, cash_flow_detail::CashFlowDetail};
 
 #[derive(Serialize)]
 struct ContextReadAllFinances {
@@ -59,7 +59,7 @@ pub fn read_cash_flow(id: String) -> Template {
         Ok(cf) => cf,
         Err(e) => { error!("Could not parse cash flow: {}", e); CashFlowDetail::empty() }
     };
-    cash_flow.id = id;
+    cash_flow.id = Some(id);
     let context = ContextReadCashFlowDetail {cash_flow};
     Template::render("read_cash_flow", &context)
 }
@@ -80,7 +80,7 @@ pub fn update_cash_flow(id: String) -> Template {
         Ok(cf) => cf,
         Err(e) => { error!("Could not parse cash flow: {}", e); CashFlowDetail::empty() }
     };
-    cash_flow.id = id;
+    cash_flow.id = Some(id);
     let context = ContextReadCashFlowDetail {cash_flow};
     Template::render("update_cash_flow", &context)
 }

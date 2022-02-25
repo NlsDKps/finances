@@ -20,6 +20,15 @@ pub struct CashFlowFrequency {
     pub frequency: Frequency,
 }
 
+impl CashFlowFrequency {
+    pub(crate) fn example() -> Self {
+        CashFlowFrequency {
+            date: NaiveDate::from_ymd(1987, 10, 19),
+            frequency: Frequency::Yearly(42)
+        }
+    }
+}
+
 /// Allows to (de-)serialize a NaiveDate into a JSON string.
 mod date_format {
     use chrono::NaiveDate;
